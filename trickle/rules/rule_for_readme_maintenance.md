@@ -1,6 +1,6 @@
 When updating the project
-- Check if README.md needs to be updated
-- Update feature list if new functionality is added
-- Update technology stack if new libraries are integrated
-- Update user credentials if authentication changes
-- Keep documentation in sync with actual implementation
+
+- Check if any significant features, structures, or functionalities have been added or modified
+- Update the README.md in trickle/notes accordingly to reflect these changes
+- Keep the README concise and focused on key features and usage information
+- Update version number if major changes are made

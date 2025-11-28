@@ -1,15 +1,47 @@
-const USERS_DATABASE = [
-  { id: 1, username: 'super1', password: 'pass123', role: 'superusuario', name: 'Super Usuario 1' },
-  { id: 2, username: 'super2', password: 'pass123', role: 'superusuario', name: 'Super Usuario 2' },
-  { id: 3, username: 'admin1', password: 'pass123', role: 'admin', name: 'Administrador 1' },
-  { id: 4, username: 'admin2', password: 'pass123', role: 'admin', name: 'Administrador 2' },
-  { id: 5, username: 'user1', password: 'pass123', role: 'usuario', name: 'Usuario Regular 1' },
-  { id: 6, username: 'user2', password: 'pass123', role: 'usuario', name: 'Usuario Regular 2' }
+const defaultUsers = [
+  {
+    id: 1,
+    username: 'fundador',
+    password: 'fundador123',
+    role: 'fundador',
+    name: 'Francisco Fundador',
+    avatar: 'F'
+  },
+  {
+    id: 2,
+    username: 'admin',
+    password: 'admin123',
+    role: 'administrador',
+    name: 'Ana Administradora',
+    avatar: 'A'
+  },
+  {
+    id: 3,
+    username: 'usuario',
+    password: 'usuario123',
+    role: 'usuario',
+    name: 'Carlos Usuario',
+    avatar: 'U'
+  }
 ];
 
 async function authenticateUser(username, password) {
-  const user = USERS_DATABASE.find(u => u.username === username && u.password === password);
-  return user || null;
+  const user = defaultUsers.find(u => u.username === username && u.password === password);
+  
+  if (user) {
+    return {
+      success: true,
+      user: {
+        id: user.id,
+        username: user.username,
+        role: user.role,
+        name: user.name,
+        avatar: user.avatar
+      }
+    };
+  }
+  
+  return { success: false };
 }
 
 function getCurrentUser() {

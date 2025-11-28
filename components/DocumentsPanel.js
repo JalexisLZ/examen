@@ -1,43 +1,39 @@
 function DocumentsPanel() {
   try {
-    const documents = [
-      { id: 1, name: 'Reporte Mensual.pdf', status: 'Completado', date: '2025-11-20' },
-      { id: 2, name: 'Proyecto Q4.docx', status: 'En Progreso', date: '2025-11-25' },
-      { id: 3, name: 'Análisis de Datos.xlsx', status: 'Pendiente', date: '2025-11-15' },
-      { id: 4, name: 'Presentación Anual.pptx', status: 'Completado', date: '2025-11-22' }
-    ];
+    const [documents] = React.useState([
+      { id: 1, name: 'Reporte Anual 2024.pdf', status: 'Completado', date: '2024-11-15' },
+      { id: 2, name: 'Propuesta Proyecto.docx', status: 'En Revisión', date: '2024-11-20' },
+      { id: 3, name: 'Presupuesto Q4.xlsx', status: 'Pendiente', date: '2024-11-25' },
+      { id: 4, name: 'Manual Usuario.pdf', status: 'Completado', date: '2024-11-10' }
+    ]);
 
     const getStatusColor = (status) => {
       switch (status) {
-        case 'Completado': return 'text-green-600';
-        case 'En Progreso': return 'text-blue-600';
-        case 'Pendiente': return 'text-yellow-600';
-        default: return 'text-gray-600';
+        case 'Completado': return 'bg-green-500';
+        case 'En Revisión': return 'bg-yellow-500';
+        case 'Pendiente': return 'bg-red-500';
+        default: return 'bg-gray-500';
       }
     };
 
     return (
-      <div className="bg-white rounded-lg p-6 shadow-lg" data-name="documents-panel" data-file="components/DocumentsPanel.js">
-        <h2 className="text-xl font-bold mb-4">Panel de Documentos</h2>
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="border-b">
-                <th className="text-left p-3 font-bold">Documento</th>
-                <th className="text-left p-3 font-bold">Estatus</th>
-                <th className="text-left p-3 font-bold">Última Modificación</th>
-              </tr>
-            </thead>
-            <tbody>
-              {documents.map(doc => (
-                <tr key={doc.id} className="border-b hover:bg-gray-50">
-                  <td className="p-3">{doc.name}</td>
-                  <td className={`p-3 font-bold ${getStatusColor(doc.status)}`}>{doc.status}</td>
-                  <td className="p-3">{doc.date}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <div className="bg-gray-200 rounded-lg p-6 shadow-lg" data-name="documents-panel" data-file="components/DocumentsPanel.js">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">Panel de Documentos</h2>
+        <div className="space-y-3">
+          {documents.map(doc => (
+            <div key={doc.id} className="bg-white rounded-lg p-4 flex items-center justify-between hover:shadow-md transition-shadow">
+              <div className="flex items-center flex-1">
+                <div className="icon-file-text text-2xl text-gray-600 mr-4"></div>
+                <div>
+                  <h3 className="font-semibold text-gray-800">{doc.name}</h3>
+                  <p className="text-sm text-gray-500">Última modificación: {doc.date}</p>
+                </div>
+              </div>
+              <div className={`${getStatusColor(doc.status)} text-white px-4 py-2 rounded-lg text-sm font-semibold`}>
+                {doc.status}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     );

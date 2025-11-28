@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Login - Control de Versiones</title>
-    <meta name="description" content="Sistema de gestión con control de roles y versiones">
-    <meta name="keywords" content="login, roles, usuarios, dashboard">
-    <meta property="og:title" content="Sistema de Login">
-    <meta property="og:description" content="Sistema de gestión con control de roles">
-    <meta name="twitter:title" content="Sistema de Login">
-    <meta name="twitter:description" content="Sistema de gestión con control de roles">
+    <title>Contactos - Sistema</title>
+    <meta name="description" content="Gestión de contactos del sistema">
 
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
     <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -35,24 +30,13 @@
             font-style: italic;
         }
     }
-
-    @layer components {
-        .btn-primary {
-            @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            @apply shadow-lg transform scale-105;
-        }
-    }
     </style>
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/babel" src="components/ShieldLogo.js"></script>
     <script type="text/babel" src="utils/auth.js"></script>
-    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel" src="components/TopBar.js"></script>
+    <script type="text/babel" src="components/Sidebar.js"></script>
+    <script type="text/babel" src="contactos-app.js"></script>
 </body>
 </html>

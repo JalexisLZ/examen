@@ -12,28 +12,37 @@ function ActivityChart() {
         if (chartInstance.current) {
           chartInstance.current.destroy();
         }
-
+        
         chartInstance.current = new ChartJS(ctx, {
           type: 'line',
           data: {
             labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
             datasets: [{
-              label: 'Actividad del Usuario',
-              data: [65, 59, 80, 81, 56, 55, 40],
-              borderColor: '#2563eb',
-              backgroundColor: 'rgba(37, 99, 235, 0.1)',
-              tension: 0.4
+              label: 'Actividad',
+              data: [12, 19, 15, 25, 22, 30, 28],
+              borderColor: 'rgb(255, 140, 0)',
+              backgroundColor: 'rgba(255, 140, 0, 0.1)',
+              tension: 0.4,
+              fill: true
             }]
           },
           options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
-              legend: { display: false }
+              legend: {
+                display: false
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
           }
         });
       }
-
+      
       return () => {
         if (chartInstance.current) {
           chartInstance.current.destroy();
@@ -42,9 +51,11 @@ function ActivityChart() {
     }, []);
 
     return (
-      <div className="bg-white rounded-lg p-6 shadow-lg" data-name="activity-chart" data-file="components/ActivityChart.js">
-        <h2 className="text-xl font-bold mb-4">Actividad del Usuario</h2>
-        <canvas ref={chartRef}></canvas>
+      <div className="bg-gray-200 rounded-lg p-6 shadow-lg" data-name="activity-chart" data-file="components/ActivityChart.js">
+        <h2 className="text-xl font-bold text-gray-800 mb-4">Actividad del Usuario</h2>
+        <div style={{ height: '300px' }}>
+          <canvas ref={chartRef}></canvas>
+        </div>
       </div>
     );
   } catch (error) {

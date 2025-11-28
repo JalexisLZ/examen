@@ -1,48 +1,63 @@
-# Sistema de Login con Control de Versiones y Roles
+# Sistema de Gestión con Control de Versiones y Roles
 
-## Descripción
-Sistema completo de autenticación con control de roles (superusuario, admin, usuario) y dashboard interactivo.
+Sistema completo de gestión empresarial con autenticación de usuarios basada en roles y panel de control interactivo.
 
-## Características
+## Características Principales
 
-### Página de Login
-- Fondo con imagen de paisaje de montañas
-- Contenedor transparente con efecto glassmorphism
-- Logo de águila real
-- Formulario de autenticación
-- Usuarios de prueba predefinidos
+### Sistema de Login
+- Autenticación con control de roles (Fundador, Administrador, Usuario)
+- Fondo panorámico de valle con montañas durante el día
+- Logo en forma de escudo medieval
+- Interfaz con contenedor opaco, borde grueso y sombreado intenso
 
 ### Dashboard
-- Topbar negro con notificaciones y perfil de usuario
-- Sidebar con navegación y opción de ocultar/mostrar
-- 4 tarjetas de estadísticas con colores específicos
-- Calendario interactivo con navegación
-- Gráfico de actividad del usuario
-- Panel de documentos con tabla
+- Fondo nocturno de valle con montañas
+- **TopBar**: Barra superior con búsqueda global y avatar de usuario (cuadrado grande con iniciales)
+- **Sidebar**: Panel lateral colapsible con logo y navegación (Inicio, Usuarios, Cerrar Sesión)
+- **4 Tarjetas Estadísticas**: Color naranja con iconos
+- **Calendario Interactivo**: Navegación por meses con botón "Hoy"
+- **Gráfico de Actividad**: Visualización de datos del usuario con Chart.js
+- **Panel de Documentos**: Lista con estatus, nombre y fecha de modificación
 
-## Roles de Usuario
+## Usuarios Predeterminados
 
-### Superusuario
-- super1 / pass123
-- super2 / pass123
+| Usuario | Contraseña | Rol |
+|---------|-----------|-----|
+| fundador | fundador123 | Fundador |
+| admin | admin123 | Administrador |
+| usuario | usuario123 | Usuario |
 
-### Administrador
-- admin1 / pass123
-- admin2 / pass123
+## Páginas del Sistema
 
-### Usuario Regular
-- user1 / pass123
-- user2 / pass123
-
-## Tecnologías
-- React 18
-- Tailwind CSS
-- Chart.js
-- Lucide Icons
+- **Login** (`index.html`) - Autenticación de usuarios
+- **Dashboard** (`dashboard.html`) - Panel principal con estadísticas
+- **Usuarios** (`usuarios.html`) - Gestión de usuarios del sistema
+- **Archivos** (`archivos.html`) - Subir y descargar archivos
+- **Contactos** (`contactos.html`) - Gestión de contactos
+- **Perfil** (`perfil.html`) - Configuración de perfil y foto
 
 ## Estructura de Archivos
+
 - `index.html` - Página de login
-- `dashboard.html` - Dashboard principal
-- `components/` - Componentes React
-- `utils/` - Utilidades y autenticación
-- `trickle/assets/` - Recursos e imágenes
+- `dashboard.html` - Panel principal
+- `usuarios.html` - Gestión de usuarios
+- `archivos.html` - Gestión de archivos
+- `contactos.html` - Directorio de contactos
+- `perfil.html` - Configuración de perfil
+- `components/` - Componentes React reutilizables
+- `utils/auth.js` - Sistema de autenticación
+
+## Colores del Sistema
+
+- **Primario**: Naranja (#ff8c00)
+- **Secundario**: Azul oscuro (#1e3a8a)
+- **Acento**: Amarillo dorado (#fbbf24)
+
+## Tipografía
+
+- Fuente: Helvetica (con cursivas en títulos)
+
+---
+
+**Año**: 2025  
+**Versión**: 1.0
